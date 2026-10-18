@@ -1,0 +1,14 @@
+# Example batch macro: three energies with the same geometry, then refraction off.
+#   build/xraycrl --config config/runs/objective1_full_paraxial.json --macro macros/batch_example.mac
+/xrcl/output/prefix obj1_20keV
+/xrcl/source/energy 20 keV
+/xrcl/run/beamOnAll
+/xrcl/output/prefix obj1_25keV
+/xrcl/source/energy 25 keV
+/xrcl/run/beamOnAll
+/xrcl/output/prefix obj1_30keV
+/xrcl/source/energy 30 keV
+/xrcl/run/beamOnAll
+/xrcl/output/prefix obj1_no_refraction
+/xrcl/refraction/enable false
+/xrcl/run/beamOnAll

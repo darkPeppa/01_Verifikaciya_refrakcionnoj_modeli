@@ -1,0 +1,7 @@
+lens,z_focus_mm,focus_from_lens_end_mm,efl_mm,n_unscattered_at_focus,rms_x_unscattered_um,max_r_unscattered_um,n_scattered_at_focus_plane,n_scattered_within_1um,median_r_scattered_um,thesis_spot_5_2_5_um,effective_aperture_um
+objective1,119.0768,38.0768,83.3038,34713,4.718e-05,1.422e-01,176,0,7955.7,0.0329,53.03
+objective2,80.2510,-0.7490,51.1626,,,,,,,0.0258,38.33
+objective2_N145,82.8903,27.8903,58.4622,45911,3.739e-05,9.746e-02,302,0,5405.2,0.0276,40.65
+objective2_N180,80.6143,12.6143,52.7796,42907,3.225e-05,1.075e-01,202,0,2359.0,0.0262,39.30
+condenser1,4969.2251,4871.3231,4921.5210,23272,8.562e-04,2.201e-01,619,0,746993.3,0.2531,438.51
+condenser2,2303.9189,2206.9189,2256.3769,23584,5.586e-04,2.142e-01,489,0,361290.0,0.1714,295.72

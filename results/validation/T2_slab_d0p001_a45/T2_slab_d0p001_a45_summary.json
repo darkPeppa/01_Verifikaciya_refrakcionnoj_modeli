@@ -1,0 +1,163 @@
+{
+  "config": {
+    "geometry": {
+      "check_overlaps": true
+    },
+    "material": {
+      "_dir": "/work/config/materials",
+      "beta_note": "Not used in stage 1. Thesis value mu = 0.66 1/m at 25 keV is inconsistent with beta: 4 pi beta / lambda = 66.1 1/m = 0.661 1/cm, and mu_m rho = 0.543 cm2/g * 1.24 g/cm3 = 0.673 1/cm; the unit must be 1/cm.",
+      "beta_ref": 2.61e-10,
+      "beta_ref_energy_keV": 25.0,
+      "comment": "Negative epoxy photoresist SU-8 (MRT, Germany). Neustroeva 2021, sec. 1.7; Neustroeva 2019, sec. 5.2 (ref. [11] there: Reznikova et al., Phys. Stat. Sol. (a) 204 (2007) 2811).",
+      "delta": {
+        "delta_ref": 4.32e-07,
+        "energy_ref_keV": 25.0,
+        "exponent": -2.0,
+        "model": "power_law",
+        "source": "delta(25 keV) = 4.32e-7 (Neustroeva 2019/2021); delta ~ lambda^2 = E^-2 as in thesis formula (1.7.4) delta = 1.7564e-6 lambda[A]^2 (identical to 4 digits). Approximation valid far from absorption edges; NOT valid near the Sb K edge (30.49 keV)."
+      },
+      "density_g_cm3": 1.24,
+      "density_uncertainty_g_cm3": 0.02,
+      "file": "/work/config/materials/su8.json",
+      "mass_percent": [
+        [
+          "C",
+          72.4
+        ],
+        [
+          "O",
+          17.9
+        ],
+        [
+          "H",
+          6.9
+        ],
+        [
+          "Sb",
+          1.326
+        ],
+        [
+          "F",
+          1.242
+        ],
+        [
+          "S",
+          0.3493
+        ]
+      ],
+      "mass_percent_note": "Published values sum to 100.1173 %; they are normalised by this sum when building the G4Material (relative change 1.2e-3).",
+      "name": "SU8",
+      "normalize_mass_fractions": true
+    },
+    "name": "T2_slab_d0p001_a45",
+    "output": {
+      "directory": "/work/results/validation/T2_slab_d0p001_a45",
+      "prefix": "T2_slab_d0p001_a45",
+      "trace_events": 10
+    },
+    "refraction": {
+      "delta_override": 0.001,
+      "enabled": true
+    },
+    "source": {
+      "distance_mm": 1.0,
+      "energy_keV": 25.0,
+      "mode": "axis",
+      "offset_um": [
+        0.0,
+        0.0
+      ]
+    },
+    "system": {
+      "mode": "slab",
+      "slab_thickness_um": 100,
+      "slab_tilt_deg": 45
+    }
+  },
+  "energy_keV": 25.0,
+  "geant4_version": "$Name: geant4-11-04-patch-02 [MT]$",
+  "layout": {
+    "mode": "slab",
+    "slab_thickness_um": 100.0,
+    "slab_tilt_deg": 45.0,
+    "z_entrance_plane_mm": -3.5758892449920645,
+    "z_exit_plane_mm": 3.5758892449920645,
+    "z_source_mm": -4.570889244992065
+  },
+  "material": {
+    "delta": 0.001,
+    "delta_free_electron_estimate": 4.3837523011093934e-07,
+    "delta_model": "constant delta = 0.001",
+    "delta_source": "refraction.delta_override",
+    "density_g_cm3": 1.24,
+    "electron_density_per_cm3": 3.9741237776075435e+23,
+    "mass_fraction_used": [
+      [
+        "C",
+        0.7231517430054546
+      ],
+      [
+        "O",
+        0.17879027900272976
+      ],
+      [
+        "H",
+        0.06891915782786791
+      ],
+      [
+        "Sb",
+        0.01324446424344244
+      ],
+      [
+        "F",
+        0.012405448409016221
+      ],
+      [
+        "S",
+        0.003488907511489023
+      ]
+    ],
+    "mass_percent_source": [
+      [
+        "C",
+        72.4
+      ],
+      [
+        "O",
+        17.9
+      ],
+      [
+        "H",
+        6.9
+      ],
+      [
+        "Sb",
+        1.326
+      ],
+      [
+        "F",
+        1.242
+      ],
+      [
+        "S",
+        0.3493
+      ]
+    ],
+    "mass_percent_source_sum": 100.11730000000001,
+    "name": "SU8"
+  },
+  "name": "T2_slab_d0p001_a45",
+  "rays": {
+    "expected_refractions_per_ray": 0,
+    "generated": 1,
+    "interacted": 0,
+    "max_refractions_valid": 2,
+    "min_refractions_valid": 2,
+    "outside_aperture": 0,
+    "reached_exit_plane": 1,
+    "source_mode": "axis",
+    "valid": 1,
+    "with_total_reflection": 0
+  },
+  "refraction_enabled": true
+}

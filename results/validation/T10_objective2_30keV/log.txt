@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/objective2_full_paraxial.json --set name="T10_objective2_30keV" --set output.directory="/work/results/validation/T10_objective2_30keV" --set output.prefix="T10_objective2_30keV" --set source.energy_keV=30.0
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T10_objective2_30keV' : E = 30 keV, delta = 3e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 215 | from lens end: A = 15.654546505745827 mm, C = 15.654546513718074 mm | EFL: A = 63.374332665341356 mm, C = 63.374332671969064 mm
+  axis y: N_focusing = 215 | from lens end: A = 15.842984737184096 mm, C = 15.8429847451563 mm | EFL: A = 63.37433266534132 mm, C = 63.37433267196905 mm
+  output: /work/results/validation/T10_objective2_30keV/T10_objective2_30keV_summary.json

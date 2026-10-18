@@ -1,0 +1,21 @@
+{
+  "name": "Objective 2, variant N=180 (25 keV)",
+  "source": "Neustroeva A. A., master thesis NSU 2021, Table 2 (photomask topology for MIR 15-35 keV objectives/condensers) [47]",
+  "R_um": 6,
+  "A_um": 60,
+  "N_per_axis": 180,
+  "p_um": 160,
+  "N_definition": "N = number of elements focusing in ONE transverse direction; the full set has 2N single linear elements alternating X/Y",
+  "d_um": 10.0,
+  "d_note": "central web not given in Table 2; reconstructed from p = d + A^2/(4R) -> 10 um (also stated for condenser 2 in Neustroeva 2019, sec. 5.2). Adjustable.",
+  "frame_um": 0.0,
+  "height_um": 0,
+  "height_note": "0 = automatic (4 x half aperture); the structure height of the real lenses is not given in the sources",
+  "L_nominal_mm": 68.0,
+  "gap_mode": "from_length",
+  "reference_focal_cm": {
+    "25": 3.9
+  },
+  "reference_note": "Table 2 focal lengths FL (cm) by photon energy (keV); they coincide with the thin-lens value R/(2 N delta(E)), delta(E) from formula (1.7.4).",
+  "data_note": "Footnote of Table 2 (Neustroeva 2021): 'Для N = 180, L = 6,8 см' (25 keV value 3.9 cm)."
+}

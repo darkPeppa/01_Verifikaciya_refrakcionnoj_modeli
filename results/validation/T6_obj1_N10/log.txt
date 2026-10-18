@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/objective1_full_paraxial.json --set name="T6_obj1_N10" --set output.directory="/work/results/validation/T6_obj1_N10" --set output.prefix="T6_obj1_N10" --set system.N_per_axis=10
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T6_obj1_N10' : E = 25 keV, delta = 4.32e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 10 | from lens end: A = 1039.786209339658 mm, C = 1039.7862093525364 mm | EFL: A = 1042.5355880037366 mm, C = 1042.5355880166148 mm
+  axis y: N_focusing = 10 | from lens end: A = 1040.0492875198738 mm, C = 1040.049287532752 mm | EFL: A = 1042.5355880037364 mm, C = 1042.5355880166148 mm
+  output: /work/results/validation/T6_obj1_N10/T6_obj1_N10_summary.json

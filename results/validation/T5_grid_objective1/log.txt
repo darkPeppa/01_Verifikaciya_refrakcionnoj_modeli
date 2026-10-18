@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/objective1_full_grid.json --set name="T5_grid_objective1" --set output.directory="/work/results/validation/T5_grid_objective1" --set output.prefix="T5_grid_objective1" --set output.write_rays=true
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T5_grid_objective1' : E = 25 keV, delta = 4.32e-07 ===
+  rays: 441 generated, 441 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 154 | from lens end: A = 38.07676493985028 mm, C = 38.07676486024471 mm | EFL: A = 83.3038379977214 mm, C = 83.30383796603574 mm
+  axis y: N_focusing = 154 | from lens end: A = 38.33984312006601 mm, C = 38.339843040460465 mm | EFL: A = 83.3038379977214 mm, C = 83.3038379660357 mm
+  output: /work/results/validation/T5_grid_objective1/T5_grid_objective1_summary.json

@@ -1,0 +1,30 @@
+{
+  "name": "objective2_full_paraxial",
+  "material": "../materials/su8.json",
+  "lens": "../lenses/objective2.json",
+  "system": {
+    "mode": "full",
+    "first_orientation": "X"
+  },
+  "geometry": {
+    "surface": "analytic",
+    "check_overlaps": false
+  },
+  "refraction": {
+    "enabled": true
+  },
+  "physics": {
+    "em": "none"
+  },
+  "source": {
+    "energy_keV": 25.0,
+    "mode": "paraxial",
+    "paraxial_fraction": 0.01,
+    "distance_mm": 1.0
+  },
+  "output": {
+    "directory": "results/objective2_full_paraxial",
+    "prefix": "objective2_full_paraxial",
+    "trace_events": 0
+  }
+}

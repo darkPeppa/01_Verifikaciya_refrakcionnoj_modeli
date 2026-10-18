@@ -1,0 +1,68 @@
+=== configure & build (11.4.2)
+-- Geant4 version: 11.4.2
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /work/build
+[0/2] Re-checking globbed directories...
+[1/5] Building CXX object CMakeFiles/xrcl_core.dir/src/OutputWriter.cc.o
+[2/5] Linking CXX static library libxrcl_core.a
+[3/5] Linking CXX executable unit_tests
+[4/5] Linking CXX executable xraycrl
+=== unit tests
+PASS Snell: deflection vs quad-precision scalar Snell law, all angles and media
+PASS Snell: reversibility and normal orientation independence
+PASS Solid: Inside agrees with the exact membership away from the surface
+PASS Solid: DistanceToIn/Out land on the surface and skip no material (brute force)
+PASS Solid: surface normals are outward unit vectors equal to the analytic gradient
+PASS Solid: safety distances are lower bounds
+PASS Solid: aperture, cross-section and polygon are consistent
+PASS Paraxial: single element and thin/continuous limits
+PASS Layout: gaps, overlaps and alternating orientation from the design data
+[SU8MaterialBuilder] published mass percentages of SU8_unit sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+PASS Material: SU-8 normalisation and delta models
+10/10 unit test cases passed
+=== validation suite
+--- T1: delta = 0 and refraction switched off: directions must stay exactly (0,0,1).
+  [PASS] T1 no refraction (delta=0), objective 1 full set, 11x11 rays: max|dk| = 0.0e+00, max lateral shift = 0.0e+00 um, valid 121/121, focus: none
+  [PASS] T1 no refraction (process off), objective 1 full set, 11x11 rays: max|dk| = 0.0e+00, max lateral shift = 0.0e+00 um, valid 121/121, focus: none
+--- T2: Flat SU-8 slab: direction inside vs exact scalar Snell law; parallel faces restore the direction.
+  [PASS] T2 vector Snell law at a plane SU-8 slab (delta = 1e-3 and 4.32e-7, 0..89.97 deg): 11 cases, worst angle error 2.7e-15 rad, 2 total-reflection cases correct
+--- T3: Single element of each design: focusing only in its own axis, f = R/(2 delta).
+  [PASS] T3 single linear element (4 designs, 25 keV): objective1: f=10.4167 m (A-C -1.2e-11, A-thin 2.4e-07); objective2: f=6.9444 m (A-C -1.2e-11, A-thin 3.6e-07); condenser1: f=103.0093 m (A-C 1.1e-10, A-thin 2.4e-08); condenser2: f=69.4444 m (A-C 2.0e-10, A-thin 3.6e-08)
+--- T4: t4_pair
+  [PASS] T4 orthogonal pair X+Y (4 designs, 25 keV): objective1: z_x - z_y = -0.2631 mm (matrix -0.2631); objective2: z_x - z_y = -0.1884 mm (matrix -0.1884); condenser1: z_x - z_y = -2.3310 mm (matrix -2.3310); condenser2: z_x - z_y = -1.5647 mm (matrix -1.5647)
+--- T5: t5_full
+  [PASS] T5 full sets: 4 designs of Table 2 + objective 2 variants N=145, N=180 (25 keV): objective1: BFL_x 38.08 mm (matrix 38.08), EFL_x 83.304 mm; objective2: BFL_x -0.749 mm (matrix -0.749), EFL_x 51.163 mm; objective2_N145: BFL_x 27.89 mm (matrix 27.89), EFL_x 58.462 mm; objective2_N180: BFL_x 12.61 mm (matrix 12.61), EFL_x 52.78 mm; condenser1: BFL_x 4871 mm (matrix 4871), EFL_x 4921.5 mm; condenser2: BFL_x 2207 mm (matrix 2207), EFL_x 2256.4 mm
+--- T6: t6_N
+  [PASS] T6 dependence on N (objective 1 geometry, 25 keV, N = 1..250 per axis): EFL/f_thin: N=1: 1.0000, N=2: 1.0000, N=5: 1.0002, N=10: 1.0008, N=20: 1.0034, N=50: 1.0214, N=100: 1.0894, N=154: 1.2316, N=250: 1.8151
+--- T7: t7_R
+  [PASS] T7 dependence on R (single element, p = 235 um, d = 10 um): R=3: +7.2e-07, R=6: +3.6e-07, R=9: +2.4e-07, R=20: +1.1e-07, R=60: +3.6e-08, R=89: +2.4e-08, R=200: +1.1e-08
+--- T8: t8_delta
+  [PASS] T8 dependence on delta (1e-8..1e-4) and on energy (15..35 keV, delta ~ E^-2): d=1e-08: +5.6e-09, d=1e-07: +5.6e-08, d=4.32e-07: +2.4e-07, d=1e-06: +5.6e-07, d=1e-05: +5.6e-06, d=0.0001: +5.6e-05; f/E^2 spread 5.4e-07
+--- T9: Exact analytic surfaces vs polygonal (tessellated) surfaces with n chords per parabola.
+  [PASS] T9 surface representation: analytic solid vs G4ExtrudedSolid with n = 8..1024 chords: mean rel. deflection error n=8: 3.68e-01 -> n=1024: 1.40e-03, order 1.12
+--- T10: t10_table
+  [PASS] T10 comparison with the thesis Table 2 (20/25/30 keV; objective 2 with N=145/180 variants): 12 table entries; worst table-vs-thin deviation 1.14%; objective 1 @30 keV: -6.57%
+--- T11: Random rays through the full objective 1, and Geant4 overlap checks.
+  [PASS] T11 navigation robustness and geometry overlap checking: valid 3000/3000, refractions 616..616, G4Exceptions 0; overlap checks: objective1 310 volumes checked, 0 overlaps, condenser1 44 volumes checked, 0 overlaps, objective2 432 volumes checked, 0 overlaps
+--- T12: t12_screens
+  [PASS] T12 Geant4 transport to screens vs analytic straight-line extrapolation from the exit plane: 484 screen hits, max deviation 2.1e-14 um
+--- T13: t13_reproducibility
+  [PASS] T13 reproducibility (same seed, two runs): identical
+--- T14: t14_macro
+  [PASS] T14 macro control: /xrcl/refraction/enable false and /xrcl/source/energy 20 keV: refraction off: no deflection; 20 keV delta = 6.7500e-07
+--- T15: t15_rms_scan
+  [PASS] T15 method B: closed-form RMS minimum vs sampled RMS(z) scan (objective 1, 21x21 grid): x: closed form 119.0770 mm, scan 119.1292 mm (step 0.125); y: closed form 119.3400 mm, scan 119.3784 mm (step 0.125)
+
+16/16 checks without failure; report: /work/results/validation/validation_report.md
+=== ray traces for figures
+=== figures
+  wrote fig1_rays_xz_objective1
+  wrote fig2_rays_yz_objective1
+  wrote fig1b_rays_xz_condenser2
+  wrote fig3_rms_vs_z
+  wrote fig4_focal_lengths_analytic_vs_numeric
+  wrote fig4b_table2_comparison
+  wrote fig5_focal_length_vs_N
+  wrote fig6_surface_representation_error
+  wrote fig7_snell_plane_slab

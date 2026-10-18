@@ -1,0 +1,30 @@
+{
+  "name": "objective1_single_paraxial",
+  "material": "../materials/su8.json",
+  "lens": "../lenses/objective1.json",
+  "system": {
+    "mode": "single",
+    "first_orientation": "X"
+  },
+  "geometry": {
+    "surface": "analytic",
+    "check_overlaps": false
+  },
+  "refraction": {
+    "enabled": true
+  },
+  "physics": {
+    "em": "none"
+  },
+  "source": {
+    "energy_keV": 25.0,
+    "mode": "paraxial",
+    "paraxial_fraction": 0.01,
+    "distance_mm": 1.0
+  },
+  "output": {
+    "directory": "results/objective1_single_paraxial",
+    "prefix": "objective1_single_paraxial",
+    "trace_events": 0
+  }
+}

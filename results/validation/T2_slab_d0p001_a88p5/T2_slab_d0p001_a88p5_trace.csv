@@ -1,0 +1,2 @@
+event,seq,element,surface,x_um,y_um,z_mm,kx_before,ky_before,kz_before,kx_after,ky_after,kz_after,nx,ny,nz,energy_keV,material_before,material_after,track_length_mm,delta_path_before_step_nm,status
+0,0,0,0,0,0,-1.9100775007055235,0,0,1,-0.052335956242943842,0,0.99862953475457406,0.99965732497555748,-0,0.026176948307873146,25,G4_Galactic,SU8,0.99509999999999987,0,total_reflection

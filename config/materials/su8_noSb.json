@@ -1,0 +1,14 @@
+{
+  "name": "SU8_noSb",
+  "comment": "HYPOTHETICAL control material for the Sb K-edge study: SU-8 composition of Neustroeva 2021 with antimony removed (all other mass fractions kept and renormalised), same density. Not a real resist recipe: Sb belongs to the photo-acid generator (triarylsulfonium hexafluoroantimonate).",
+  "density_g_cm3": 1.24,
+  "mass_percent": [["C", 72.4], ["O", 17.9], ["H", 6.9], ["F", 1.242], ["S", 0.3493]],
+  "normalize_mass_fractions": true,
+  "delta": {
+    "model": "power_law",
+    "delta_ref": 4.32e-7,
+    "energy_ref_keV": 25.0,
+    "exponent": -2.0,
+    "source": "kept identical to SU8 so that only the interaction physics differs (removing 1.3 % Sb changes the electron density by ~1 %)"
+  }
+}

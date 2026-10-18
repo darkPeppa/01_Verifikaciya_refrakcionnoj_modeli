@@ -1,0 +1,981 @@
+{
+  "results": [
+    {
+      "id": "T1",
+      "name": "no refraction (delta=0), objective 1 full set, 11x11 rays",
+      "criterion": "|k - (0,0,1)| = 0, lateral shift < 1e-9 um, no finite focus",
+      "measured": "max|dk| = 0.0e+00, max lateral shift = 0.0e+00 um, valid 121/121, focus: none",
+      "status": "PASS"
+    },
+    {
+      "id": "T1",
+      "name": "no refraction (process off), objective 1 full set, 11x11 rays",
+      "criterion": "|k - (0,0,1)| = 0, lateral shift < 1e-9 um, no finite focus",
+      "measured": "max|dk| = 0.0e+00, max lateral shift = 0.0e+00 um, valid 121/121, focus: none",
+      "status": "PASS"
+    },
+    {
+      "id": "T2",
+      "name": "vector Snell law at a plane SU-8 slab (delta = 1e-3 and 4.32e-7, 0..89.97 deg)",
+      "criterion": "|theta_refr - asin(sin(theta)/(1-delta))| < 1e-13 rad; exit direction = incident; TIR beyond the critical angle",
+      "measured": "11 cases, worst angle error 2.7e-15 rad, 2 total-reflection cases correct",
+      "status": "PASS"
+    },
+    {
+      "id": "T3",
+      "name": "single linear element (4 designs, 25 keV)",
+      "criterion": "EFL_trace vs matrix < 1e-6, vs R/(2 delta) < 1e-4; orthogonal axis: slope change exactly 0, no focus",
+      "measured": "objective1: f=10.4167 m (A-C -1.2e-11, A-thin 2.4e-07); objective2: f=6.9444 m (A-C -1.2e-11, A-thin 3.6e-07); condenser1: f=103.0093 m (A-C 1.1e-10, A-thin 2.4e-08); condenser2: f=69.4444 m (A-C 2.0e-10, A-thin 3.6e-08)",
+      "status": "PASS"
+    },
+    {
+      "id": "T4",
+      "name": "orthogonal pair X+Y (4 designs, 25 keV)",
+      "criterion": "focus in both axes; trace vs matrix (EFL and focus position) < 1e-6; astigmatism z_x - z_y equal in both models",
+      "measured": "objective1: z_x - z_y = -0.2631 mm (matrix -0.2631); objective2: z_x - z_y = -0.1884 mm (matrix -0.1884); condenser1: z_x - z_y = -2.3310 mm (matrix -2.3310); condenser2: z_x - z_y = -1.5647 mm (matrix -1.5647)",
+      "status": "PASS"
+    },
+    {
+      "id": "T5",
+      "name": "full sets: 4 designs of Table 2 + objective 2 variants N=145, N=180 (25 keV)",
+      "criterion": "all paraxial rays valid with 4N refractions; trace vs matrix: focus position / EFL < 1e-5 (relative to EFL); all 21x21 grid rays (90 % aperture) transmitted",
+      "measured": "objective1: BFL_x 38.08 mm (matrix 38.08), EFL_x 83.304 mm; objective2: BFL_x -0.749 mm (matrix -0.749), EFL_x 51.163 mm; objective2_N145: BFL_x 27.89 mm (matrix 27.89), EFL_x 58.462 mm; objective2_N180: BFL_x 12.61 mm (matrix 12.61), EFL_x 52.78 mm; condenser1: BFL_x 4871 mm (matrix 4871), EFL_x 4921.5 mm; condenser2: BFL_x 2207 mm (matrix 2207), EFL_x 2256.4 mm",
+      "status": "PASS"
+    },
+    {
+      "id": "T6",
+      "name": "dependence on N (objective 1 geometry, 25 keV, N = 1..250 per axis)",
+      "criterion": "trace = matrix (< 1e-5); EFL = R/(2N delta) within 1 % while L/f < 0.02; EFL within 2 % of the continuous thick-lens model for all N",
+      "measured": "EFL/f_thin: N=1: 1.0000, N=2: 1.0000, N=5: 1.0002, N=10: 1.0008, N=20: 1.0034, N=50: 1.0214, N=100: 1.0894, N=154: 1.2316, N=250: 1.8151",
+      "status": "PASS"
+    },
+    {
+      "id": "T7",
+      "name": "dependence on R (single element, p = 235 um, d = 10 um)",
+      "criterion": "EFL/R = 1/(2 delta) within 1e-4; trace = matrix < 1e-6",
+      "measured": "R=3: +7.2e-07, R=6: +3.6e-07, R=9: +2.4e-07, R=20: +1.1e-07, R=60: +3.6e-08, R=89: +2.4e-08, R=200: +1.1e-08",
+      "status": "PASS"
+    },
+    {
+      "id": "T8",
+      "name": "dependence on delta (1e-8..1e-4) and on energy (15..35 keV, delta ~ E^-2)",
+      "criterion": "EFL*delta = R/2 within 1e-3 (thickness effect grows with delta); trace = matrix < 1e-6; f/E^2 constant within 1e-4",
+      "measured": "d=1e-08: +5.6e-09, d=1e-07: +5.6e-08, d=4.32e-07: +2.4e-07, d=1e-06: +5.6e-07, d=1e-05: +5.6e-06, d=0.0001: +5.6e-05; f/E^2 spread 5.4e-07",
+      "status": "PASS"
+    },
+    {
+      "id": "T9",
+      "name": "surface representation: analytic solid vs G4ExtrudedSolid with n = 8..1024 chords",
+      "criterion": "deflection error decreases monotonically with n with order >= 0.8 (chord slope error ~ 1/n); analytic solid used as reference",
+      "measured": "mean rel. deflection error n=8: 3.68e-01 -> n=1024: 1.40e-03, order 1.12",
+      "status": "PASS"
+    },
+    {
+      "id": "T10",
+      "name": "comparison with the thesis Table 2 (20/25/30 keV; objective 2 with N=145/180 variants)",
+      "criterion": "table FL reproduced by thin-lens R/(2N delta(E)) within 1.5 % (objective 1 @30 keV reported separately); traced EFL = matrix < 1e-5. Traced focus positions are NOT required to equal the table: the table is a thin-lens value",
+      "measured": "12 table entries; worst table-vs-thin deviation 1.14%; objective 1 @30 keV: -6.57%",
+      "status": "PASS"
+    },
+    {
+      "id": "T11",
+      "name": "navigation robustness and geometry overlap checking",
+      "criterion": "3000 random rays over 99.9 % of the aperture: all transmitted with exactly 616 refractions, no G4Exception; G4 overlap check: 0 overlaps",
+      "measured": "valid 3000/3000, refractions 616..616, G4Exceptions 0; overlap checks: objective1 310 volumes checked, 0 overlaps, condenser1 44 volumes checked, 0 overlaps, objective2 432 volumes checked, 0 overlaps",
+      "status": "PASS"
+    },
+    {
+      "id": "T12",
+      "name": "Geant4 transport to screens vs analytic straight-line extrapolation from the exit plane",
+      "criterion": "max deviation < 1e-6 um (validates extrapolation used for long-focus systems)",
+      "measured": "484 screen hits, max deviation 2.1e-14 um",
+      "status": "PASS"
+    },
+    {
+      "id": "T13",
+      "name": "reproducibility (same seed, two runs)",
+      "criterion": "identical ray files",
+      "measured": "identical",
+      "status": "PASS"
+    },
+    {
+      "id": "T14",
+      "name": "macro control: /xrcl/refraction/enable false and /xrcl/source/energy 20 keV",
+      "criterion": "no deflection with refraction off; delta rescaled to (25/20)^2 * 4.32e-7",
+      "measured": "refraction off: no deflection; 20 keV delta = 6.7500e-07",
+      "status": "PASS"
+    },
+    {
+      "id": "T15",
+      "name": "method B: closed-form RMS minimum vs sampled RMS(z) scan (objective 1, 21x21 grid)",
+      "criterion": "|z_closed - z_scan| <= scan step",
+      "measured": "x: closed form 119.0770 mm, scan 119.1292 mm (step 0.125); y: closed form 119.3400 mm, scan 119.3784 mm (step 0.125)",
+      "status": "PASS"
+    }
+  ],
+  "data": {
+    "T2": [
+      {
+        "delta": 0.001,
+        "alpha": 0,
+        "err": 0.0,
+        "status": "normal incidence"
+      },
+      {
+        "delta": 0.001,
+        "alpha": 10,
+        "err": 2.7755575615628914e-17,
+        "exit_dir_err": 4.5964310812720735e-20,
+        "status": "refracted"
+      },
+      {
+        "delta": 0.001,
+        "alpha": 45,
+        "err": 1.1102230246251565e-16,
+        "exit_dir_err": 6.4830618608977325e-21,
+        "status": "refracted"
+      },
+      {
+        "delta": 0.001,
+        "alpha": 80,
+        "err": 0.0,
+        "exit_dir_err": 1.3946395482924935e-18,
+        "status": "refracted"
+      },
+      {
+        "delta": 0.001,
+        "alpha": 87,
+        "err": 1.3322676295501878e-15,
+        "exit_dir_err": 4.3348360312704744e-18,
+        "status": "refracted"
+      },
+      {
+        "delta": 0.001,
+        "alpha": 88.5,
+        "err": 2.220446049250313e-16,
+        "status": "total reflection"
+      },
+      {
+        "delta": 4.32e-07,
+        "alpha": 10,
+        "err": 2.7755575615628914e-17,
+        "exit_dir_err": 1.7568084523022372e-23,
+        "status": "refracted"
+      },
+      {
+        "delta": 4.32e-07,
+        "alpha": 45,
+        "err": 1.1102230246251565e-16,
+        "exit_dir_err": 8.98987244978879e-23,
+        "status": "refracted"
+      },
+      {
+        "delta": 4.32e-07,
+        "alpha": 80,
+        "err": 2.220446049250313e-16,
+        "exit_dir_err": 4.892101280007116e-22,
+        "status": "refracted"
+      },
+      {
+        "delta": 4.32e-07,
+        "alpha": 89,
+        "err": 2.6645352591003757e-15,
+        "exit_dir_err": 2.910455163494914e-21,
+        "status": "refracted"
+      },
+      {
+        "delta": 4.32e-07,
+        "alpha": 89.97,
+        "err": 0.0,
+        "status": "total reflection"
+      }
+    ],
+    "T3": [
+      {
+        "lens": "objective1",
+        "f_thin_mm": 10416.666666666668,
+        "efl_A_mm": 10416.669166668351,
+        "efl_C_mm": 10416.669166797135,
+        "rel_A_thin": 2.4000016157515346e-07,
+        "rel_A_C": -1.2363304210672616e-11,
+        "bfl_A_mm": 10416.55166666499,
+        "y_slope": 0.0
+      },
+      {
+        "lens": "objective2",
+        "f_thin_mm": 6944.444444444444,
+        "efl_A_mm": 6944.446944446427,
+        "efl_C_mm": 6944.446944532285,
+        "rel_A_thin": 3.600002854509512e-07,
+        "rel_A_C": -1.2363564661454922e-11,
+        "bfl_A_mm": 6944.366944442466,
+        "y_slope": 0.0
+      },
+      {
+        "lens": "condenser1",
+        "f_thin_mm": 103009.25925925926,
+        "efl_A_mm": 103009.2617720116,
+        "efl_C_mm": 103009.26176053396,
+        "rel_A_thin": 2.4393460922612903e-08,
+        "rel_A_C": 1.1142332024627539e-10,
+        "bfl_A_mm": 103008.09625925815,
+        "y_slope": 0.0
+      },
+      {
+        "lens": "condenser2",
+        "f_thin_mm": 69444.44444444444,
+        "efl_A_mm": 69444.4469590203,
+        "efl_C_mm": 69444.4469453042,
+        "rel_A_thin": 3.620989231858403e-08,
+        "rel_A_C": 1.9751178786402045e-10,
+        "bfl_A_mm": 69443.66944444328,
+        "y_slope": 0.0
+      }
+    ],
+    "T4": [
+      {
+        "lens": "objective1",
+        "z_x_A": 10416.78666666067,
+        "z_x_C": 10416.786666789456,
+        "efl_x_A": 10416.669166668347,
+        "efl_x_C": 10416.669166797135,
+        "z_y_A": 10417.049744840884,
+        "z_y_C": 10417.049744969672,
+        "efl_y_A": 10416.669166668351,
+        "efl_y_C": 10416.669166797135,
+        "astig_A": -0.2630781802145066,
+        "astig_C": -0.26307818021632556
+      },
+      {
+        "lens": "objective2",
+        "z_x_A": 6944.526944438146,
+        "z_x_C": 6944.526944524006,
+        "efl_x_A": 6944.446944446425,
+        "efl_x_C": 6944.446944532286,
+        "z_y_A": 6944.715382670904,
+        "z_y_C": 6944.715382756763,
+        "efl_y_A": 6944.446944446427,
+        "efl_y_C": 6944.446944532285,
+        "astig_A": -0.18843823275801697,
+        "astig_C": -0.18843823275710747
+      },
+      {
+        "lens": "condenser1",
+        "z_x_A": 103010.42725925382,
+        "z_x_C": 103010.42726052736,
+        "efl_x_A": 103009.2617720116,
+        "efl_x_C": 103009.26176053396,
+        "z_y_A": 103012.75825925816,
+        "z_y_C": 103012.75826053169,
+        "efl_y_A": 103009.2617720116,
+        "efl_y_C": 103009.26176053396,
+        "astig_A": -2.3310000043420587,
+        "astig_C": -2.3310000043275068
+      },
+      {
+        "lens": "condenser2",
+        "z_x_A": 69445.22444443897,
+        "z_x_C": 69445.22444529756,
+        "efl_x_A": 69444.44695902032,
+        "efl_x_C": 69444.44694530421,
+        "z_y_A": 69446.78911657442,
+        "z_y_C": 69446.78911743301,
+        "efl_y_A": 69444.4469590203,
+        "efl_y_C": 69444.4469453042,
+        "astig_A": -1.5646721354569308,
+        "astig_C": -1.5646721354569308
+      }
+    ],
+    "T5": [
+      {
+        "lens": "objective1",
+        "n_elements": 308,
+        "built_length_mm": 81.0,
+        "gap_um": 28.078175895765458,
+        "warnings": [],
+        "bfl_A_x": 38.076764859385676,
+        "bfl_C_x": 38.07676486024471,
+        "efl_A_x": 83.30383796523363,
+        "efl_C_x": 83.30383796603574,
+        "f_thin_x": 67.64069264069265,
+        "bfl_cont_x": 38.205863562148494,
+        "dz_AC_rel_x": -1.0312033366691778e-11,
+        "defl_AC_rel_x": -9.628817868774516e-12,
+        "rms_focus_x": 38.07695475388735,
+        "rms_min_um_x": 1.8148427922506823e-05,
+        "bfl_A_y": 38.33984303960146,
+        "bfl_C_y": 38.339843040460465,
+        "efl_A_y": 83.30383796523358,
+        "efl_C_y": 83.3038379660357,
+        "f_thin_y": 67.64069264069265,
+        "bfl_cont_y": 38.205863562148494,
+        "dz_AC_rel_y": -1.0311692185419415e-11,
+        "defl_AC_rel_y": -9.628817868774521e-12,
+        "rms_focus_y": 38.340032922703145,
+        "rms_min_um_y": 1.8152047920898713e-05,
+        "grid_valid": 441,
+        "grid_generated": 441,
+        "elapsed_s": 0.19834256172180176
+      },
+      {
+        "lens": "objective2",
+        "n_elements": 430,
+        "built_length_mm": 81.0,
+        "gap_um": 28.438228438228435,
+        "warnings": [],
+        "bfl_A_x": -0.7489736645750611,
+        "bfl_C_x": -0.7489736640843745,
+        "efl_A_x": 51.16259044636343,
+        "efl_C_x": 51.16259044667438,
+        "f_thin_x": 32.29974160206718,
+        "bfl_cont_x": -0.6544704625229605,
+        "dz_AC_rel_x": -9.590730222556686e-12,
+        "defl_AC_rel_x": -6.077638159221607e-12,
+        "rms_focus_x": -0.7488711438948314,
+        "rms_min_um_x": 1.0752387269801424e-05,
+        "bfl_A_y": -0.5605354318168736,
+        "bfl_C_y": -0.5605354313261302,
+        "efl_A_y": 51.16259044636343,
+        "efl_C_y": 51.16259044667438,
+        "f_thin_y": 32.29974160206718,
+        "bfl_cont_y": -0.6544704625229605,
+        "dz_AC_rel_y": -9.591841257364826e-12,
+        "defl_AC_rel_y": -6.077638159221607e-12,
+        "rms_focus_y": -0.5604329207578331,
+        "rms_min_um_y": 1.0752568376923709e-05,
+        "grid_valid": 441,
+        "grid_generated": 441,
+        "elapsed_s": 0.23096656799316406
+      },
+      {
+        "lens": "objective2_N145",
+        "n_elements": 290,
+        "built_length_mm": 55.0,
+        "gap_um": 29.757785467128024,
+        "warnings": [],
+        "bfl_A_x": 27.89026077451919,
+        "bfl_C_x": 27.890260775126535,
+        "efl_A_x": 58.46216992072925,
+        "efl_C_x": 58.46216992129939,
+        "f_thin_x": 47.89272030651341,
+        "bfl_cont_x": 27.98232961489774,
+        "dz_AC_rel_x": -1.0388658334712806e-11,
+        "defl_AC_rel_x": -9.752280696070892e-12,
+        "rms_focus_x": 27.890399651570235,
+        "rms_min_um_x": 1.3014050157559076e-05,
+        "bfl_A_y": 28.080018564306357,
+        "bfl_C_y": 28.080018564913672,
+        "efl_A_y": 58.46216992072925,
+        "efl_C_y": 58.46216992129937,
+        "f_thin_y": 47.89272030651341,
+        "bfl_cont_y": 27.98232961489774,
+        "dz_AC_rel_y": -1.0388172179144711e-11,
+        "defl_AC_rel_y": -9.75191607939482e-12,
+        "rms_focus_y": 28.08015743393716,
+        "rms_min_um_y": 1.3014081454542065e-05,
+        "grid_valid": 441,
+        "grid_generated": 441,
+        "elapsed_s": 0.18944478034973145
+      },
+      {
+        "lens": "objective2_N180",
+        "n_elements": 360,
+        "built_length_mm": 68.0,
+        "gap_um": 28.96935933147632,
+        "warnings": [],
+        "bfl_A_x": 12.614280430465811,
+        "bfl_C_x": 12.614280430985033,
+        "efl_A_x": 52.77958422807126,
+        "efl_C_x": 52.77958422850434,
+        "f_thin_x": 38.58024691358025,
+        "bfl_cont_x": 12.707186505114018,
+        "dz_AC_rel_x": -9.837553787491236e-12,
+        "defl_AC_rel_x": -8.205500463932157e-12,
+        "rms_focus_x": 12.614390036013077,
+        "rms_min_um_x": 1.1167821857025362e-05,
+        "bfl_A_y": 12.803249794117264,
+        "bfl_C_y": 12.8032497946365,
+        "efl_A_y": 52.77958422807127,
+        "efl_C_y": 52.77958422850433,
+        "f_thin_y": 38.58024691358025,
+        "bfl_cont_y": 12.707186505114018,
+        "dz_AC_rel_y": -9.837823036575386e-12,
+        "defl_AC_rel_y": -8.205096590305936e-12,
+        "rms_focus_y": 12.803359390598303,
+        "rms_min_um_y": 1.1167958408626267e-05,
+        "grid_valid": 441,
+        "grid_generated": 441,
+        "elapsed_s": 0.20745372772216797
+      },
+      {
+        "lens": "condenser1",
+        "n_elements": 42,
+        "built_length_mm": 97.902,
+        "gap_um": 0.0,
+        "warnings": [
+          "nominal length L = 97 mm is shorter than 2*N*p = 97.902 mm (gap would be -22 um, i.e. overlapping elements); gap set to 0 and the length reconstructed as 2*N*p"
+        ],
+        "bfl_A_x": 4871.323058791321,
+        "bfl_C_x": 4871.323058851919,
+        "efl_A_x": 4921.520954668924,
+        "efl_C_x": 4921.52095412033,
+        "f_thin_x": 4905.202821869488,
+        "bfl_cont_x": 4872.525316783369,
+        "dz_AC_rel_x": -1.2312822307297862e-11,
+        "defl_AC_rel_x": 1.11468297463941e-10,
+        "rms_focus_x": 4871.35183431371,
+        "rms_min_um_x": 0.0006209556541027879,
+        "bfl_A_y": 4873.65405879564,
+        "bfl_C_y": 4873.654058856238,
+        "efl_A_y": 4921.520954668924,
+        "efl_C_y": 4921.52095412033,
+        "f_thin_y": 4905.202821869488,
+        "bfl_cont_y": 4872.525316783369,
+        "dz_AC_rel_y": -1.2313007106816193e-11,
+        "defl_AC_rel_y": 1.11468297463941e-10,
+        "rms_focus_y": 4873.6828343150755,
+        "rms_min_um_y": 0.0006209645880417013,
+        "grid_valid": 441,
+        "grid_generated": 441,
+        "elapsed_s": 0.09517335891723633
+      },
+      {
+        "lens": "condenser2",
+        "n_elements": 62,
+        "built_length_mm": 97.0,
+        "gap_um": 9.672131147541048,
+        "warnings": [],
+        "bfl_A_x": 2206.918946727557,
+        "bfl_C_x": 2206.9189467552105,
+        "efl_A_x": 2256.3769049207895,
+        "efl_C_x": 2256.3769044749097,
+        "f_thin_x": 2240.143369175627,
+        "bfl_cont_x": 2207.716311975995,
+        "dz_AC_rel_x": -1.2255772118529177e-11,
+        "defl_AC_rel_x": 1.9760873135152945e-10,
+        "rms_focus_x": 2206.931580579897,
+        "rms_min_um_x": 0.0003945407584368655,
+        "bfl_A_y": 2208.483618863024,
+        "bfl_C_y": 2208.4836188906775,
+        "efl_A_y": 2256.3769049207895,
+        "efl_C_y": 2256.3769044749097,
+        "f_thin_y": 2240.143369175627,
+        "bfl_cont_y": 2207.716311975995,
+        "dz_AC_rel_y": -1.2255772118529177e-11,
+        "defl_AC_rel_y": 1.9760873135152945e-10,
+        "rms_focus_y": 2208.496252711137,
+        "rms_min_um_y": 0.0003945577370276391,
+        "grid_valid": 441,
+        "grid_generated": 441,
+        "elapsed_s": 0.09940266609191895
+      }
+    ],
+    "T6": [
+      {
+        "N": 1,
+        "L_mm": 0.4980781758957655,
+        "f_thin": 10416.666666666668,
+        "efl_A": 10416.669166668347,
+        "efl_C": 10416.669166797135,
+        "bfl_A": 10416.288588484775,
+        "bfl_C": 10416.288588613561,
+        "efl_cont": 10416.749680159071,
+        "bfl_cont": 10416.500640078792,
+        "ratio_efl_thin": 1.0000002400001613,
+        "L_over_f": 4.781550488599348e-05
+      },
+      {
+        "N": 2,
+        "L_mm": 1.0242345276872964,
+        "f_thin": 5208.333333333334,
+        "efl_A": 5208.466125747052,
+        "efl_C": 5208.466125811447,
+        "bfl_A": 5207.822462737721,
+        "bfl_C": 5207.822462802115,
+        "efl_cont": 5208.5040430045065,
+        "bfl_cont": 5207.9919173480475,
+        "ratio_efl_thin": 1.0000254961434338,
+        "L_over_f": 0.00019665302931596088
+      },
+      {
+        "N": 5,
+        "L_mm": 2.6027035830618894,
+        "f_thin": 2083.3333333333335,
+        "efl_A": 2083.7548211535022,
+        "efl_C": 2083.7548211792596,
+        "bfl_A": 2082.321797343392,
+        "bfl_C": 2082.32179736915,
+        "efl_cont": 2083.7671804967886,
+        "bfl_cont": 2082.465693207011,
+        "ratio_efl_thin": 1.000202314153681,
+        "L_over_f": 0.001249297719869707
+      },
+      {
+        "N": 10,
+        "L_mm": 5.233485342019544,
+        "f_thin": 1041.6666666666667,
+        "efl_A": 1042.5355880037366,
+        "efl_C": 1042.5355880166148,
+        "bfl_A": 1039.786209339658,
+        "bfl_C": 1039.7862093525364,
+        "efl_cont": 1042.5394257628755,
+        "bfl_cont": 1039.9215869664,
+        "ratio_efl_thin": 1.000834164483587,
+        "L_over_f": 0.0050241459283387625
+      },
+      {
+        "N": 20,
+        "L_mm": 10.495048859934853,
+        "f_thin": 520.8333333333334,
+        "efl_A": 522.5870638264264,
+        "efl_C": 522.5870638328639,
+        "bfl_A": 517.1991455132369,
+        "bfl_C": 517.199145519673,
+        "efl_cont": 522.5866290176813,
+        "bfl_cont": 517.3302751114103,
+        "ratio_efl_thin": 1.0033671625467386,
+        "L_over_f": 0.020150493811074918
+      },
+      {
+        "N": 50,
+        "L_mm": 26.279739413680783,
+        "f_thin": 208.33333333333337,
+        "efl_A": 212.78171484968485,
+        "efl_C": 212.78171485225528,
+        "bfl_A": 199.37017035104827,
+        "bfl_C": 199.3701703536154,
+        "efl_cont": 212.7786167730361,
+        "bfl_cont": 199.4988572515218,
+        "ratio_efl_thin": 1.021352231278487,
+        "L_over_f": 0.12614274918566773
+      },
+      {
+        "N": 100,
+        "L_mm": 52.58755700325733,
+        "f_thin": 104.16666666666669,
+        "efl_A": 113.48084343812023,
+        "efl_C": 113.48084343939472,
+        "bfl_A": 85.88932691293917,
+        "bfl_C": 85.88932691422215,
+        "efl_cont": 113.47645370414055,
+        "bfl_cont": 86.01764367904596,
+        "ratio_efl_thin": 1.089416097005954,
+        "L_over_f": 0.5048405472312703
+      },
+      {
+        "N": 154,
+        "L_mm": 81.0,
+        "f_thin": 67.64069264069265,
+        "efl_A": 83.30383796523363,
+        "efl_C": 83.30383796603574,
+        "bfl_A": 38.076764859385676,
+        "bfl_C": 38.07676486024471,
+        "efl_cont": 83.29816393189954,
+        "bfl_cont": 38.205863562148494,
+        "ratio_efl_thin": 1.2315639404780139,
+        "L_over_f": 1.197504
+      },
+      {
+        "N": 250,
+        "L_mm": 131.51100977198698,
+        "f_thin": 41.66666666666667,
+        "efl_A": 75.63076559819581,
+        "efl_C": 75.6307655984943,
+        "bfl_A": -15.586344611409118,
+        "bfl_C": -15.586344610667197,
+        "efl_cont": 75.62010963477306,
+        "bfl_cont": -15.452364673698673,
+        "ratio_efl_thin": 1.8151383743566991,
+        "L_over_f": 3.1562642345276872
+      }
+    ],
+    "T7": [
+      {
+        "R_um": 3,
+        "efl_mm": 3472.22472041645,
+        "efl_over_R": 1157408.2401388166,
+        "expected": 1157407.4074074074,
+        "rel_C": -5.332553790517629e-10,
+        "dev": 7.19479937627554e-07
+      },
+      {
+        "R_um": 6,
+        "efl_mm": 6944.446933405889,
+        "efl_over_R": 1157407.8222343146,
+        "expected": 1157407.4074074074,
+        "rel_C": -1.6022004763617749e-09,
+        "dev": 3.5841044776496744e-07
+      },
+      {
+        "R_um": 9,
+        "efl_mm": 10416.669166668351,
+        "efl_over_R": 1157407.6851853721,
+        "expected": 1157407.4074074074,
+        "rel_C": -1.2363304210672616e-11,
+        "dev": 2.40000161522147e-07
+      },
+      {
+        "R_um": 20,
+        "efl_mm": 23148.15063952487,
+        "efl_over_R": 1157407.5319762435,
+        "expected": 1157407.4074074074,
+        "rel_C": -3.8494761018525424e-10,
+        "dev": 1.0762747426618091e-07
+      },
+      {
+        "R_um": 60,
+        "efl_mm": 69444.44695268017,
+        "efl_over_R": 1157407.4492113362,
+        "expected": 1157407.4074074074,
+        "rel_C": 1.0621400633167187e-10,
+        "dev": 3.611859455965316e-08
+      },
+      {
+        "R_um": 89,
+        "efl_mm": 103009.26177320095,
+        "efl_over_R": 1157407.4356539433,
+        "expected": 1157407.4074074074,
+        "rel_C": 1.2296943867405117e-10,
+        "dev": 2.4405007126304668e-08
+      },
+      {
+        "R_um": 200,
+        "efl_mm": 231481.4840477219,
+        "efl_over_R": 1157407.4202386094,
+        "expected": 1157407.4074074074,
+        "rel_C": 2.737901283627198e-10,
+        "dev": 1.1086158435702487e-08
+      }
+    ],
+    "T8": [
+      {
+        "delta": 1e-08,
+        "efl_mm": 450000.0024999999,
+        "efl_delta": 0.004500000024999999,
+        "rel_C": 5.0247588633896755e-09,
+        "dev": 5.5555553490904686e-09
+      },
+      {
+        "delta": 1e-07,
+        "efl_mm": 45000.00250000041,
+        "efl_delta": 0.004500000250000041,
+        "rel_C": -5.263555176388125e-10,
+        "dev": 5.555556481517954e-08
+      },
+      {
+        "delta": 4.32e-07,
+        "efl_mm": 10416.669166668351,
+        "efl_delta": 0.004500001080000727,
+        "rel_C": -1.2363304210672616e-11,
+        "dev": 2.400001617441916e-07
+      },
+      {
+        "delta": 1e-06,
+        "efl_mm": 4500.00250000389,
+        "efl_delta": 0.00450000250000389,
+        "rel_C": 2.8755983286044766e-11,
+        "dev": 5.555564202008867e-07
+      },
+      {
+        "delta": 1e-05,
+        "efl_mm": 450.00250003889226,
+        "efl_delta": 0.004500025000388923,
+        "rel_C": -4.544795566706761e-12,
+        "dev": 5.5556419829017045e-06
+      },
+      {
+        "delta": 0.0001,
+        "efl_mm": 45.002500388977495,
+        "efl_delta": 0.0045002500388977495,
+        "rel_C": 5.144043582241932e-13,
+        "dev": 5.556419949992453e-05
+      },
+      {
+        "energy_keV": 15,
+        "efl_mm": 3750.002500004666,
+        "delta": 1.2000000000000002e-06,
+        "f_over_E2": 16.666677777798515
+      },
+      {
+        "energy_keV": 20,
+        "efl_mm": 6666.669166669291,
+        "delta": 6.750000000000001e-07,
+        "f_over_E2": 16.666672916673228
+      },
+      {
+        "energy_keV": 25,
+        "efl_mm": 10416.669166668351,
+        "delta": 4.32e-07,
+        "f_over_E2": 16.66667066666936
+      },
+      {
+        "energy_keV": 30,
+        "efl_mm": 15000.002500001165,
+        "delta": 3.0000000000000004e-07,
+        "f_over_E2": 16.666669444445738
+      },
+      {
+        "energy_keV": 35,
+        "efl_mm": 20416.669166667536,
+        "delta": 2.2040816326530608e-07,
+        "f_over_E2": 16.6666687074837
+      }
+    ],
+    "T9": {
+      "rows": [
+        {
+          "segments": 8,
+          "mean_rel_deflection_error": 0.3684852909409838,
+          "max_rel_deflection_error": 4.131579778856101,
+          "rms_focus_rel_error": 0.02564391375736503,
+          "valid": 40
+        },
+        {
+          "segments": 16,
+          "mean_rel_deflection_error": 0.16581080646643132,
+          "max_rel_deflection_error": 1.5657900517942809,
+          "rms_focus_rel_error": 0.007062259386054983,
+          "valid": 40
+        },
+        {
+          "segments": 32,
+          "mean_rel_deflection_error": 0.06706527876547627,
+          "max_rel_deflection_error": 0.28289505784002533,
+          "rms_focus_rel_error": 0.002259642560596848,
+          "valid": 40
+        },
+        {
+          "segments": 64,
+          "mean_rel_deflection_error": 0.04060607674875687,
+          "max_rel_deflection_error": 0.3585524743665613,
+          "rms_focus_rel_error": 0.0010488540140450985,
+          "valid": 40
+        },
+        {
+          "segments": 128,
+          "mean_rel_deflection_error": 0.014260175819153573,
+          "max_rel_deflection_error": 0.0378287131354529,
+          "rms_focus_rel_error": 0.0007609298719614494,
+          "valid": 40
+        },
+        {
+          "segments": 256,
+          "mean_rel_deflection_error": 0.011259711657324586,
+          "max_rel_deflection_error": 0.1225331668062149,
+          "rms_focus_rel_error": 0.00015909087963977082,
+          "valid": 40
+        },
+        {
+          "segments": 512,
+          "mean_rel_deflection_error": 0.005035810065505053,
+          "max_rel_deflection_error": 0.04235222689978622,
+          "rms_focus_rel_error": 1.2280120296942573e-05,
+          "valid": 40
+        },
+        {
+          "segments": 1024,
+          "mean_rel_deflection_error": 0.0014032128086744085,
+          "max_rel_deflection_error": 0.00226267758365914,
+          "rms_focus_rel_error": 0.00013372466366179503,
+          "valid": 40
+        }
+      ],
+      "order": 1.1157520632443343
+    },
+    "T10": [
+      {
+        "lens": "objective1",
+        "E_keV": 20,
+        "N": 154,
+        "L_mm": 81.0,
+        "delta": 6.750000000000001e-07,
+        "table_cm": 4.3,
+        "thin_cm": 4.329004329004329,
+        "table_vs_thin": -0.00669999999999991,
+        "efl_cm": 6.0462900573649,
+        "bfl_end_cm": 1.2053001776511139,
+        "focus_centre_cm": 5.2553001776511135,
+        "thesis_173_cm": 5.679004329004329,
+        "rel_AC": 5.27675477335157e-12,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "objective1",
+        "E_keV": 25,
+        "N": 154,
+        "L_mm": 81.0,
+        "delta": 4.32e-07,
+        "table_cm": 6.8,
+        "thin_cm": 6.764069264069265,
+        "table_vs_thin": 0.00531199999999988,
+        "efl_cm": 8.330383796523362,
+        "bfl_end_cm": 3.8076764859385674,
+        "focus_centre_cm": 7.857676485938567,
+        "thesis_173_cm": 8.114069264069265,
+        "rel_AC": -9.628817868774516e-12,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "objective1",
+        "E_keV": 30,
+        "N": 154,
+        "L_mm": 81.0,
+        "delta": 3.0000000000000004e-07,
+        "table_cm": 9.1,
+        "thin_cm": 9.740259740259742,
+        "table_vs_thin": -0.06573333333333338,
+        "efl_cm": 11.2343030235678,
+        "bfl_end_cm": 6.864789060597792,
+        "focus_centre_cm": 10.914789060597792,
+        "thesis_173_cm": 11.090259740259741,
+        "rel_AC": -1.3327509568525903e-10,
+        "known_discrepancy": true
+      },
+      {
+        "lens": "objective2",
+        "E_keV": 30,
+        "N": 215,
+        "L_mm": 81.0,
+        "delta": 3.0000000000000004e-07,
+        "table_cm": 4.7,
+        "thin_cm": 4.651162790697674,
+        "table_vs_thin": 0.010500000000000058,
+        "efl_cm": 6.337433266534136,
+        "bfl_end_cm": 1.5654546505745828,
+        "focus_centre_cm": 5.615454650574582,
+        "thesis_173_cm": 6.001162790697674,
+        "rel_AC": -1.0458032267373915e-10,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "objective2_N145",
+        "E_keV": 20,
+        "N": 145,
+        "L_mm": 55.0,
+        "delta": 6.750000000000001e-07,
+        "table_cm": 3.1,
+        "thin_cm": 3.065134099616858,
+        "table_vs_thin": 0.01137500000000014,
+        "efl_cm": 4.218899761195528,
+        "bfl_end_cm": 0.9574564870983778,
+        "focus_centre_cm": 3.7074564870983777,
+        "thesis_173_cm": 3.9818007662835244,
+        "rel_AC": 5.41786971973785e-12,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "objective2_N180",
+        "E_keV": 25,
+        "N": 180,
+        "L_mm": 68.0,
+        "delta": 4.32e-07,
+        "table_cm": 3.9,
+        "thin_cm": 3.8580246913580245,
+        "table_vs_thin": 0.010880000000000003,
+        "efl_cm": 5.277958422807126,
+        "bfl_end_cm": 1.2614280430465812,
+        "focus_centre_cm": 4.661428043046581,
+        "thesis_173_cm": 4.991358024691358,
+        "rel_AC": -8.205500463932157e-12,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "condenser1",
+        "E_keV": 20,
+        "N": 21,
+        "L_mm": 97.902,
+        "delta": 6.750000000000001e-07,
+        "table_cm": 314,
+        "thin_cm": 313.9329805996472,
+        "table_vs_thin": 0.00021348314606768916,
+        "efl_cm": 315.5669391616361,
+        "bfl_end_cm": 310.54255675566276,
+        "focus_centre_cm": 315.4376567556627,
+        "thesis_173_cm": 315.5646805996472,
+        "rel_AC": 1.3195136029413535e-10,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "condenser1",
+        "E_keV": 25,
+        "N": 21,
+        "L_mm": 97.902,
+        "delta": 4.32e-07,
+        "table_cm": 490,
+        "thin_cm": 490.52028218694875,
+        "table_vs_thin": -0.0010606741573032019,
+        "efl_cm": 492.1520954668924,
+        "bfl_end_cm": 487.1323058791321,
+        "focus_centre_cm": 492.0274058791321,
+        "thesis_173_cm": 492.15198218694877,
+        "rel_AC": 1.11468297463941e-10,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "condenser1",
+        "E_keV": 30,
+        "N": 21,
+        "L_mm": 97.902,
+        "delta": 3.0000000000000004e-07,
+        "table_cm": 706,
+        "thin_cm": 706.3492063492063,
+        "table_vs_thin": -0.0004943820224717978,
+        "efl_cm": 707.979856440621,
+        "bfl_end_cm": 702.9625573636679,
+        "focus_centre_cm": 707.857657363668,
+        "thesis_173_cm": 707.9809063492063,
+        "rel_AC": -3.2133310664954404e-11,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "condenser2",
+        "E_keV": 20,
+        "N": 31,
+        "L_mm": 97.0,
+        "delta": 6.750000000000001e-07,
+        "table_cm": 143,
+        "thin_cm": 143.3691756272401,
+        "table_vs_thin": -0.002574999999999773,
+        "efl_cm": 144.99717486429512,
+        "bfl_end_cm": 140.0414329660832,
+        "focus_centre_cm": 144.8914329660832,
+        "thesis_173_cm": 144.98584229390679,
+        "rel_AC": 2.1800118939348644e-10,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "condenser2",
+        "E_keV": 25,
+        "N": 31,
+        "L_mm": 97.0,
+        "delta": 4.32e-07,
+        "table_cm": 224,
+        "thin_cm": 224.0143369175627,
+        "table_vs_thin": -6.399999999987413e-05,
+        "efl_cm": 225.63769049207895,
+        "bfl_end_cm": 220.6918946727557,
+        "focus_centre_cm": 225.5418946727557,
+        "thesis_173_cm": 225.63100358422935,
+        "rel_AC": 1.9760873135152945e-10,
+        "known_discrepancy": false
+      },
+      {
+        "lens": "condenser2",
+        "E_keV": 30,
+        "N": 31,
+        "L_mm": 97.0,
+        "delta": 3.0000000000000004e-07,
+        "table_cm": 323,
+        "thin_cm": 322.5806451612903,
+        "table_vs_thin": 0.0013000000000000865,
+        "efl_cm": 324.20148521519957,
+        "bfl_end_cm": 319.26107179706594,
+        "focus_centre_cm": 324.1110717970659,
+        "thesis_173_cm": 324.1973118279569,
+        "rel_AC": 5.438287714960575e-11,
+        "known_discrepancy": false
+      }
+    ]
+  },
+  "elapsed_s": 5.471170425415039
+}

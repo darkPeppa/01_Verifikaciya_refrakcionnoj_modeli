@@ -1,0 +1,26 @@
+{
+  "name": "slab_snell",
+  "material": "../materials/su8.json",
+  "system": {
+    "mode": "slab",
+    "slab_thickness_um": 100,
+    "slab_tilt_deg": 45
+  },
+  "geometry": {
+    "check_overlaps": true
+  },
+  "refraction": {
+    "enabled": true,
+    "delta_override": 0.001
+  },
+  "source": {
+    "energy_keV": 25.0,
+    "mode": "axis",
+    "distance_mm": 1.0
+  },
+  "output": {
+    "directory": "results/slab_snell",
+    "prefix": "slab_snell",
+    "trace_events": 10
+  }
+}

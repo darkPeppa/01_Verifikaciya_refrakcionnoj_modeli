@@ -1,0 +1,32 @@
+# Software environment of the project (conda-forge). The exact package builds used and
+# validated are frozen in conda-lock-linux-64.txt (x86-64: Windows/Linux/Intel Mac) and
+# conda-lock-linux-aarch64.txt (ARM64: Apple Silicon, ARM Linux). The Dockerfile installs
+# from the lock file of the build architecture and uses this file only as a fallback.
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - geant4=11.4.2=noqt*      # Geant4 + all data sets, batch build (no Qt)
+  - cmake=3.31
+  - make
+  - ninja
+  - cxx-compiler
+  - nlohmann_json=3.11
+  - python=3.12
+  - numpy=2.2
+  - matplotlib=3.10
+  # headers/CMake files required by find_package(Geant4) (Geant4Config.cmake find_dependency)
+  - expat
+  - zlib
+  - freetype
+  - hdf5
+  - xorg-libx11
+  - xorg-xorgproto
+  - xorg-libxmu
+  - xorg-libxext
+  - xorg-libxt
+  - libgl-devel
+  - libopengl-devel
+  - libglx-devel
+  - libegl-devel
+  - libglu

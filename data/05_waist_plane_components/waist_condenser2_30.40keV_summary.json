@@ -1,0 +1,442 @@
+{
+  "config": {
+    "geometry": {
+      "check_overlaps": false,
+      "surface": "analytic"
+    },
+    "lens": {
+      "A_um": 609,
+      "L_nominal_mm": 97.0,
+      "N_definition": "N = number of elements focusing in ONE transverse direction; the full set has 2N single linear elements alternating X/Y",
+      "N_per_axis": 31,
+      "R_um": 60,
+      "_dir": "/work/config/lenses",
+      "d_note": "central web not given in Table 2; reconstructed from p = d + A^2/(4R) -> 10 um (also stated for condenser 2 in Neustroeva 2019, sec. 5.2). Adjustable.",
+      "d_um": 10.0,
+      "data_note": "With d = 10 um, d + A^2/(4R) = 1555.34 um vs p = 1555 um: parabolic aperture 2 sqrt(R(p-d)) = 608.93 um (table 609 um).",
+      "file": "/work/config/lenses/condenser2.json",
+      "frame_um": 0.0,
+      "gap_mode": "from_length",
+      "height_note": "0 = automatic (4 x half aperture); the structure height of the real lenses is not given in the sources",
+      "height_um": 0,
+      "name": "Condenser 2",
+      "p_um": 1555,
+      "reference_focal_cm": {
+        "20": 143,
+        "25": 224,
+        "30": 323
+      },
+      "reference_note": "Table 2 focal lengths FL (cm) by photon energy (keV); they coincide with the thin-lens value R/(2 N delta(E)), delta(E) from formula (1.7.4).",
+      "source": "Neustroeva A. A., master thesis NSU 2021, Table 2 (photomask topology for MIR 15-35 keV objectives/condensers) [47]"
+    },
+    "material": {
+      "_dir": "/work/config/materials",
+      "beta_note": "Not used in stage 1. Thesis value mu = 0.66 1/m at 25 keV is inconsistent with beta: 4 pi beta / lambda = 66.1 1/m = 0.661 1/cm, and mu_m rho = 0.543 cm2/g * 1.24 g/cm3 = 0.673 1/cm; the unit must be 1/cm.",
+      "beta_ref": 2.61e-10,
+      "beta_ref_energy_keV": 25.0,
+      "comment": "Negative epoxy photoresist SU-8 (MRT, Germany). Neustroeva 2021, sec. 1.7; Neustroeva 2019, sec. 5.2 (ref. [11] there: Reznikova et al., Phys. Stat. Sol. (a) 204 (2007) 2811).",
+      "delta": {
+        "delta_ref": 4.32e-07,
+        "energy_ref_keV": 25.0,
+        "exponent": -2.0,
+        "model": "power_law",
+        "source": "delta(25 keV) = 4.32e-7 (Neustroeva 2019/2021); delta ~ lambda^2 = E^-2 as in thesis formula (1.7.4) delta = 1.7564e-6 lambda[A]^2 (identical to 4 digits). Approximation valid far from absorption edges; NOT valid near the Sb K edge (30.49 keV)."
+      },
+      "density_g_cm3": 1.24,
+      "density_uncertainty_g_cm3": 0.02,
+      "file": "/work/config/materials/su8.json",
+      "mass_percent": [
+        [
+          "C",
+          72.4
+        ],
+        [
+          "O",
+          17.9
+        ],
+        [
+          "H",
+          6.9
+        ],
+        [
+          "Sb",
+          1.326
+        ],
+        [
+          "F",
+          1.242
+        ],
+        [
+          "S",
+          0.3493
+        ]
+      ],
+      "mass_percent_note": "Published values sum to 100.1173 %; they are normalised by this sum when building the G4Material (relative change 1.2e-3).",
+      "name": "SU8",
+      "normalize_mass_fractions": true
+    },
+    "name": "waist_condenser2_30.40keV",
+    "output": {
+      "directory": "/work/results/stage2_raw/05/waist_condenser2_30.40keV",
+      "prefix": "waist_condenser2_30.40keV",
+      "trace_events": 0,
+      "write_interactions": false,
+      "write_rays": true,
+      "write_secondaries": true
+    },
+    "physics": {
+      "em": "livermore"
+    },
+    "refraction": {
+      "enabled": true
+    },
+    "source": {
+      "aperture_fraction": 1.0,
+      "distance_mm": 1.0,
+      "energy_keV": 30.4,
+      "mode": "random",
+      "n_random": 100000,
+      "paraxial_fraction": 0.01,
+      "seed": 20261018
+    },
+    "system": {
+      "first_orientation": "X",
+      "mode": "full"
+    }
+  },
+  "energy_keV": 30.4,
+  "focus": {
+    "astigmatism_C_zx_minus_zy_mm": -1.564672134069042,
+    "x": {
+      "analytic": {
+        "continuous_thick_lens": {
+          "bfl_from_lens_end_mm": 3280.004800742548,
+          "efl_mm": 3328.623504087277,
+          "focus_from_lens_centre_mm": 3328.504800742548,
+          "note": "u'' = -u/(f_thin L): focusing power spread uniformly over the system length L",
+          "omega_L": 0.1711253640915252
+        },
+        "f_thin_formula": "R / (2 N delta), N = elements focusing in this axis",
+        "f_thin_mm": 3312.4014336917558,
+        "thesis_formula_1_7_3": {
+          "focus_from_lens_centre_mm": 3328.5681003584223,
+          "formula": "F_L = R/(delta N_total) + L/6 = f_thin + L/6 (from the centre)"
+        }
+      },
+      "axis": "x",
+      "comparison": {
+        "C_efl_vs_thin_rel": 0.004892797283089374
+      },
+      "max_slope_change_rad": 9.145363544090849e-05,
+      "method_A_ray_pairs": {
+        "efl_mm": null,
+        "extrapolation": "Richardson h->0 from the two smallest heights",
+        "focus_from_lens_centre_mm": null,
+        "focus_from_lens_end_mm": null,
+        "pairs": [],
+        "z_focus_mm": null
+      },
+      "method_B_rms": {
+        "n_rays": 31520,
+        "rms_at_exit_plane_um": 127.19582720215547,
+        "rms_min_from_lens_end_mm": 3279.2179395103585,
+        "rms_min_um": 0.00023954680228856443,
+        "z_rms_min_mm": 3376.2179395103585
+      },
+      "method_C_paraxial_matrix": {
+        "efl_mm": 3328.608342427024,
+        "focus_from_last_vertex_mm": 3279.9799023979176,
+        "focus_from_lens_centre_mm": 3327.7074023979176,
+        "focus_from_lens_end_mm": 3279.2074023979176,
+        "matrix_first_to_last_vertex": [
+          0.9853907594326193,
+          95.00464201696104,
+          -0.00030042585282678803,
+          0.985860827392885
+        ],
+        "valid": true,
+        "z_focus_mm": 3376.2074023979176,
+        "z_rear_principal_plane_mm": 47.59905997089345
+      },
+      "n_focusing_elements": 31
+    },
+    "y": {
+      "analytic": {
+        "continuous_thick_lens": {
+          "bfl_from_lens_end_mm": 3280.004800742548,
+          "efl_mm": 3328.623504087277,
+          "focus_from_lens_centre_mm": 3328.504800742548,
+          "note": "u'' = -u/(f_thin L): focusing power spread uniformly over the system length L",
+          "omega_L": 0.1711253640915252
+        },
+        "f_thin_formula": "R / (2 N delta), N = elements focusing in this axis",
+        "f_thin_mm": 3312.4014336917558,
+        "thesis_formula_1_7_3": {
+          "focus_from_lens_centre_mm": 3328.5681003584223,
+          "formula": "F_L = R/(delta N_total) + L/6 = f_thin + L/6 (from the centre)"
+        }
+      },
+      "axis": "y",
+      "comparison": {
+        "C_efl_vs_thin_rel": 0.004892797283089374
+      },
+      "max_slope_change_rad": 9.140794292235207e-05,
+      "method_A_ray_pairs": {
+        "efl_mm": null,
+        "extrapolation": "Richardson h->0 from the two smallest heights",
+        "focus_from_lens_centre_mm": null,
+        "focus_from_lens_end_mm": null,
+        "pairs": [],
+        "z_focus_mm": null
+      },
+      "method_B_rms": {
+        "n_rays": 31520,
+        "rms_at_exit_plane_um": 128.52029537056382,
+        "rms_min_from_lens_end_mm": 3280.782825714108,
+        "rms_min_um": 0.0002469165029870497,
+        "z_rms_min_mm": 3377.782825714108
+      },
+      "method_C_paraxial_matrix": {
+        "efl_mm": 3328.608342427024,
+        "focus_from_last_vertex_mm": 3281.5445745319867,
+        "focus_from_lens_centre_mm": 3329.2720745319866,
+        "focus_from_lens_end_mm": 3280.7720745319866,
+        "matrix_first_to_last_vertex": [
+          0.9858608273928914,
+          95.00464201696116,
+          -0.00030042585282678803,
+          0.9853907594326137
+        ],
+        "valid": true,
+        "z_focus_mm": 3377.7720745319866,
+        "z_rear_principal_plane_mm": 49.16373210496249
+      },
+      "n_focusing_elements": 31
+    }
+  },
+  "geant4_version": "$Name: geant4-11-04-patch-02 [MT]$",
+  "interactions": {
+    "attenuation_coefficients": {
+      "Rayl": {
+        "mu_over_rho_cm2_g": 0.0399447646754107,
+        "mu_per_cm": 0.04953150819750926
+      },
+      "compt": {
+        "mu_over_rho_cm2_g": 0.17677476808234516,
+        "mu_per_cm": 0.21920071242210795
+      },
+      "phot": {
+        "mu_over_rho_cm2_g": 0.1642896609931678,
+        "mu_per_cm": 0.20371917963152802
+      },
+      "photoelectric_by_element": {
+        "C": {
+          "phot_mu_per_cm": 0.04949578134740114
+        },
+        "F": {
+          "phot_mu_per_cm": 0.003526560653778825
+        },
+        "H": {
+          "phot_mu_per_cm": 5.08929017306538e-06
+        },
+        "O": {
+          "phot_mu_per_cm": 0.03521561360826546
+        },
+        "S": {
+          "phot_mu_per_cm": 0.007614799359096723
+        },
+        "Sb": {
+          "phot_mu_per_cm": 0.1078613353728128
+        }
+      },
+      "source": "G4EmCalculator, models of physics list 'livermore'",
+      "total": {
+        "mu_over_rho_cm2_g": 0.3810091937509237,
+        "mu_per_cm": 0.4724514002511453
+      }
+    },
+    "energy_deposit_in_lens": {
+      "fraction_of_beam_energy": 0.3119243295285744,
+      "per_photon_keV": 9.482499617668662,
+      "total_keV": 948249.9617668662
+    },
+    "fate": {
+      "absorbed": {
+        "count": 29897,
+        "fraction": 0.29897,
+        "stat_error": 0.001447711777599395
+      },
+      "lost": {
+        "count": 37893,
+        "fraction": 0.37893,
+        "stat_error": 0.0015340862267160865
+      },
+      "outside_aperture": {
+        "count": 0,
+        "fraction": 0.0,
+        "stat_error": 1e-05
+      },
+      "scattered_transmitted": {
+        "count": 690,
+        "fraction": 0.0069,
+        "stat_error": 0.00026177070118712674
+      },
+      "unscattered": {
+        "count": 31520,
+        "fraction": 0.3152,
+        "stat_error": 0.001469179907295223
+      }
+    },
+    "fate_definitions": {
+      "absorbed": "primary photon terminated by an interaction (photoelectric absorption)",
+      "lost": "left the world without crossing the exit plane (scattered sideways/backwards)",
+      "outside_aperture": "no interaction but passed outside the parabolic aperture",
+      "scattered_transmitted": "reached the exit plane after >= 1 Compton/Rayleigh scattering (background)",
+      "unscattered": "reached the exit plane without any interaction (contributes to the image/focus)"
+    },
+    "mean_interactions_per_photon": 0.6922,
+    "physics": {
+      "auger": false,
+      "em": "livermore",
+      "fluorescence": true
+    },
+    "processes": {
+      "Rayl": {
+        "first_interaction_count": 7200,
+        "first_interaction_fraction": 0.072,
+        "fraction_of_photons": 0.07263,
+        "interactions": 7295,
+        "photons_with_at_least_one": 7263
+      },
+      "compt": {
+        "first_interaction_count": 31716,
+        "first_interaction_fraction": 0.31716,
+        "fraction_of_photons": 0.31821,
+        "interactions": 32028,
+        "photons_with_at_least_one": 31821
+      },
+      "phot": {
+        "first_interaction_count": 29564,
+        "first_interaction_fraction": 0.29564,
+        "fraction_of_photons": 0.29897,
+        "interactions": 29897,
+        "photons_with_at_least_one": 29897
+      }
+    },
+    "secondaries": {
+      "electrons_created_by_primaries": 61925,
+      "gammas_created_by_primaries": 770,
+      "mean_energy_secondary_gammas_at_exit_keV": 3.59265,
+      "secondary_gammas_at_exit_plane": 1
+    }
+  },
+  "layout": {
+    "N_per_axis_design": 31,
+    "R_um": 60.0,
+    "built_length_mm": 97.0,
+    "d_um": 10.0,
+    "frame_um": 0.0,
+    "gap_from_nominal_length_um": 9.672131147541048,
+    "gap_um": 9.672131147541048,
+    "height_um": 1217.866987811066,
+    "lens_name": "Condenser 2",
+    "lens_source": "Neustroeva A. A., master thesis NSU 2021, Table 2 (photomask topology for MIR 15-35 keV objectives/condensers) [47]",
+    "mode": "full",
+    "n_elements": 62,
+    "n_focusing_x": 31,
+    "n_focusing_y": 31,
+    "nominal_length_mm": 97.0,
+    "notes": [
+      "parabolic aperture 2*sqrt(R(p-d)) = 608.933 um (d = 10 um); source-table aperture A = 609 um",
+      "element height (non-focusing extent) not given: using 4*(a+frame) = 1217.87 um",
+      "gap derived from nominal length: (L - 2Np)/(2N - 1) = 9.67213 um",
+      "built length 97 mm (nominal 97 mm, 2N p = 96.41 mm)"
+    ],
+    "p_um": 1555.0,
+    "parabolic_aperture_um": 608.933493905533,
+    "surface_representation": "analytic",
+    "table_aperture_um": 609.0,
+    "warnings": [],
+    "z_end_mm": 97.0,
+    "z_entrance_plane_mm": -0.005,
+    "z_exit_plane_mm": 97.005,
+    "z_source_mm": -1.0,
+    "z_start_mm": 0.0
+  },
+  "material": {
+    "delta": 2.921572022160665e-07,
+    "delta_free_electron_estimate": 2.964687054398991e-07,
+    "delta_model": "power law delta = 4.32e-07 * (E / 25 keV)^-2",
+    "delta_source": "delta(25 keV) = 4.32e-7 (Neustroeva 2019/2021); delta ~ lambda^2 = E^-2 as in thesis formula (1.7.4) delta = 1.7564e-6 lambda[A]^2 (identical to 4 digits). Approximation valid far from absorption edges; NOT valid near the Sb K edge (30.49 keV).",
+    "density_g_cm3": 1.24,
+    "electron_density_per_cm3": 3.9741237776075435e+23,
+    "mass_fraction_used": [
+      [
+        "C",
+        0.7231517430054546
+      ],
+      [
+        "O",
+        0.17879027900272976
+      ],
+      [
+        "H",
+        0.06891915782786791
+      ],
+      [
+        "Sb",
+        0.01324446424344244
+      ],
+      [
+        "F",
+        0.012405448409016221
+      ],
+      [
+        "S",
+        0.003488907511489023
+      ]
+    ],
+    "mass_percent_source": [
+      [
+        "C",
+        72.4
+      ],
+      [
+        "O",
+        17.9
+      ],
+      [
+        "H",
+        6.9
+      ],
+      [
+        "Sb",
+        1.326
+      ],
+      [
+        "F",
+        1.242
+      ],
+      [
+        "S",
+        0.3493
+      ]
+    ],
+    "mass_percent_source_sum": 100.11730000000001,
+    "name": "SU8"
+  },
+  "name": "waist_condenser2_30.40keV",
+  "rays": {
+    "expected_refractions_per_ray": 124,
+    "generated": 100000,
+    "interacted": 68480,
+    "max_refractions_valid": 124,
+    "min_refractions_valid": 124,
+    "outside_aperture": 0,
+    "reached_exit_plane": 32210,
+    "source_mode": "random",
+    "valid": 31520,
+    "with_total_reflection": 0
+  },
+  "refraction_enabled": true
+}

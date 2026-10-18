@@ -1,0 +1,20 @@
+/work/build/xraycrl --config /work/config/runs/slab_snell.json --set name="T2_slab_d0p001_a10" --set output.directory="/work/results/validation/T2_slab_d0p001_a10" --set output.prefix="T2_slab_d0p001_a10" --set refraction.delta_override=0.001 --set system.slab_tilt_deg=10 --set source.offset_um=[0.0, 0.0]
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+Checking overlaps for volume Slab:0 (G4Box) ... OK! 
+Checking overlaps for volume EntrancePlane:0 (G4Box) ... OK! 
+Checking overlaps for volume ExitPlane:0 (G4Box) ... OK! 
+
+=== XrayCRLGeant4 run 'T2_slab_d0p001_a10' : E = 25 keV, delta = 0.001 ===
+  rays: 1 generated, 1 valid, 0 outside aperture, 0 with total reflection
+  output: /work/results/validation/T2_slab_d0p001_a10/T2_slab_d0p001_a10_summary.json

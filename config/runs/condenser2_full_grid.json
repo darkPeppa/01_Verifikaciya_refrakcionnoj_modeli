@@ -1,0 +1,31 @@
+{
+  "name": "condenser2_full_grid",
+  "material": "../materials/su8.json",
+  "lens": "../lenses/condenser2.json",
+  "system": {
+    "mode": "full",
+    "first_orientation": "X"
+  },
+  "geometry": {
+    "surface": "analytic",
+    "check_overlaps": false
+  },
+  "refraction": {
+    "enabled": true
+  },
+  "physics": {
+    "em": "none"
+  },
+  "source": {
+    "energy_keV": 25.0,
+    "mode": "grid",
+    "grid_n": 21,
+    "aperture_fraction": 0.9,
+    "distance_mm": 1.0
+  },
+  "output": {
+    "directory": "results/condenser2_full_grid",
+    "prefix": "condenser2_full_grid",
+    "trace_events": 0
+  }
+}

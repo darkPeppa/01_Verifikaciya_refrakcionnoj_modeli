@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/condenser2_full_paraxial.json --set name="T10_condenser2_20keV" --set output.directory="/work/results/validation/T10_condenser2_20keV" --set output.prefix="T10_condenser2_20keV" --set source.energy_keV=20.0
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T10_condenser2_20keV' : E = 20 keV, delta = 6.75e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 31 | from lens end: A = 1400.414329660832 mm, C = 1400.4143296490092 mm | EFL: A = 1449.9717486429513 mm, C = 1449.9717483268557 mm
+  axis y: N_focusing = 31 | from lens end: A = 1401.9790017987302 mm, C = 1401.9790017869063 mm | EFL: A = 1449.9717486429518 mm, C = 1449.9717483268555 mm
+  output: /work/results/validation/T10_condenser2_20keV/T10_condenser2_20keV_summary.json

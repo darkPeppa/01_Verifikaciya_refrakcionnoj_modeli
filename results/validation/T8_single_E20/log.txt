@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/objective1_full_paraxial.json --set name="T8_single_E20" --set output.directory="/work/results/validation/T8_single_E20" --set output.prefix="T8_single_E20" --set system.mode="single" --set source.energy_keV=20
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T8_single_E20' : E = 20 keV, delta = 6.75e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 1 | from lens end: A = 6666.5516666640415 mm, C = 6666.551666609403 mm | EFL: A = 6666.669166669291 mm, C = 6666.669166614652 mm
+  axis y: N_focusing = 0 | from lens end: A = null mm, C = null mm | EFL: A = null mm, C = null mm
+  output: /work/results/validation/T8_single_E20/T8_single_E20_summary.json

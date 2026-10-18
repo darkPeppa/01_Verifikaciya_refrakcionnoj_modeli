@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/objective1_full_paraxial.json --set name="T1_process_off" --set output.directory="/work/results/validation/T1_process_off" --set output.prefix="T1_process_off" --set refraction.enabled=false --set source.mode="grid" --set source.grid_n=11
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T1_process_off' : E = 25 keV, delta = 4.32e-07 ===
+  rays: 121 generated, 121 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 154 | from lens end: A = null mm, C = null mm | EFL: A = null mm, C = null mm
+  axis y: N_focusing = 154 | from lens end: A = null mm, C = null mm | EFL: A = null mm, C = null mm
+  output: /work/results/validation/T1_process_off/T1_process_off_summary.json

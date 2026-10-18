@@ -1,0 +1,2 @@
+id,x0_um,y0_um,kx0,ky0,kz0,valid,reached_exit,outside_aperture,interacted,n_refractions,n_total_reflections,n_elements,x_exit_um,y_exit_um,z_exit_mm,kx,ky,kz,path_in_lens_mm,delta_path_nm,track_length_mm
+0,0,0,0,0,1,1,1,0,0,2,0,0,-6.1094091876145724e-05,0,3.5758892449920645,-8.9898724497887895e-23,0,1,0.14142141733141442,0.061094052287171019,8.1467784899841433

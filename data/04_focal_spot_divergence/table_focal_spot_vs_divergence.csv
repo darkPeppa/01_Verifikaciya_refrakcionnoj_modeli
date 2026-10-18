@@ -1,0 +1,4 @@
+divergence_sigma_urad,n_unscattered,sigma_x_um,sigma_y_um,fwhm_x_um,expected_sigma_efl_times_theta_um
+0.0,6910,0.00005,0.06610,0.00011,0.00000
+1.0,7003,0.08174,0.10664,0.19248,0.08330
+3.0,6931,0.24809,0.26209,0.58420,0.24991

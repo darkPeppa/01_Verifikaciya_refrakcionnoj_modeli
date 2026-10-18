@@ -1,0 +1,64 @@
+/work/build/xraycrl --config /work/config/runs/condenser1_full_paraxial.json --set name="T11_overlaps_condenser1" --set output.directory="/work/results/validation/T11_overlaps_condenser1" --set output.prefix="T11_overlaps_condenser1" --set geometry.check_overlaps=true --set system.mode="full"
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+Checking overlaps for volume CRLElement:0 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:1 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:2 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:3 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:4 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:5 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:6 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:7 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:8 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:9 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:10 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:11 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:12 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:13 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:14 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:15 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:16 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:17 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:18 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:19 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:20 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:21 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:22 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:23 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:24 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:25 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:26 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:27 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:28 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:29 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:30 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:31 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:32 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:33 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:34 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:35 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:36 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:37 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:38 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:39 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:40 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume CRLElement:41 (ParabolicLensSolid) ... OK! 
+Checking overlaps for volume EntrancePlane:0 (G4Box) ... OK! 
+Checking overlaps for volume ExitPlane:0 (G4Box) ... OK! 
+
+=== XrayCRLGeant4 run 'T11_overlaps_condenser1' : E = 25 keV, delta = 4.32e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 21 | from lens end: A = 4871.323058791321 mm, C = 4871.323058851919 mm | EFL: A = 4921.520954668924 mm, C = 4921.52095412033 mm
+  axis y: N_focusing = 21 | from lens end: A = 4873.65405879564 mm, C = 4873.654058856238 mm | EFL: A = 4921.520954668924 mm, C = 4921.52095412033 mm
+  WARNING: nominal length L = 97 mm is shorter than 2*N*p = 97.902 mm (gap would be -22 um, i.e. overlapping elements); gap set to 0 and the length reconstructed as 2*N*p
+  output: /work/results/validation/T11_overlaps_condenser1/T11_overlaps_condenser1_summary.json

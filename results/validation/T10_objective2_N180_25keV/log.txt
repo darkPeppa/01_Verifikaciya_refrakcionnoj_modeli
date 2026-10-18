@@ -1,0 +1,19 @@
+/work/build/xraycrl --config /work/config/runs/objective2_N180_full_paraxial.json --set name="T10_objective2_N180_25keV" --set output.directory="/work/results/validation/T10_objective2_N180_25keV" --set output.prefix="T10_objective2_N180_25keV" --set source.energy_keV=25.0
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T10_objective2_N180_25keV' : E = 25 keV, delta = 4.32e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 180 | from lens end: A = 12.614280430465811 mm, C = 12.614280430985033 mm | EFL: A = 52.77958422807126 mm, C = 52.77958422850434 mm
+  axis y: N_focusing = 180 | from lens end: A = 12.803249794117264 mm, C = 12.8032497946365 mm | EFL: A = 52.77958422807127 mm, C = 52.77958422850433 mm
+  output: /work/results/validation/T10_objective2_N180_25keV/T10_objective2_N180_25keV_summary.json

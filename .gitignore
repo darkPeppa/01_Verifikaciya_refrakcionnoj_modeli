@@ -1,0 +1,6 @@
+build/
+output/
+results/stage2_raw/
+data/figures_src/
+__pycache__/
+.DS_Store

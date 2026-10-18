@@ -1,0 +1,9 @@
+build
+output
+results
+data
+poster/*.pdf
+poster/*.png
+*.zip
+**/__pycache__
+.git

@@ -1,0 +1,20 @@
+/work/build/xraycrl --config /work/config/runs/condenser1_full_paraxial.json --set name="T10_condenser1_30keV" --set output.directory="/work/results/validation/T10_condenser1_30keV" --set output.prefix="T10_condenser1_30keV" --set source.energy_keV=30.0
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-04-patch-02 [MT]   (12-June-2026)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+[SU8MaterialBuilder] published mass percentages of SU8 sum to 100.117 %; fractions normalised by this sum (relative change 0.001173)
+
+=== XrayCRLGeant4 run 'T10_condenser1_30keV' : E = 30 keV, delta = 3e-07 ===
+  rays: 8 generated, 8 valid, 0 outside aperture, 0 with total reflection
+  axis x: N_focusing = 21 | from lens end: A = 7029.625573636679 mm, C = 7029.62557474055 mm | EFL: A = 7079.79856440621 mm, C = 7079.798564633707 mm
+  axis y: N_focusing = 21 | from lens end: A = 7031.956573639681 mm, C = 7031.956574743549 mm | EFL: A = 7079.798564406212 mm, C = 7079.7985646337065 mm
+  WARNING: nominal length L = 97 mm is shorter than 2*N*p = 97.902 mm (gap would be -22 um, i.e. overlapping elements); gap set to 0 and the length reconstructed as 2*N*p
+  output: /work/results/validation/T10_condenser1_30keV/T10_condenser1_30keV_summary.json
